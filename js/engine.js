@@ -1958,7 +1958,7 @@ Rule.prototype.applyAt = function(delta,tuple,check) {
         }
     }
 
-	if (verbose_logging && result){
+	if (verbose_logging && result && !disabledRules.has(rule.lineNumber)){
 		var ruleDirection = dirMaskName[rule.direction];
 		if (!rule.directional()){
 			ruleDirection="";
