@@ -6,7 +6,7 @@ var standalone_HTML_String="";
 
 var clientStandaloneRequest = new XMLHttpRequest();
 
-clientStandaloneRequest.open('GET', 'standalone_inlined.txt');
+clientStandaloneRequest.open('GET', 'https://raw.githubusercontent.com/MystikNinja/PuzzleScript/master/standalone_inlined.txt');
 clientStandaloneRequest.onreadystatechange = function() {
 
 		if(clientStandaloneRequest.readyState!=4) {

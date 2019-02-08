@@ -146,7 +146,8 @@ function tryLoadGist(id) {
 
 function tryLoadFile(fileName) {
 	var fileOpenClient = new XMLHttpRequest();
-	fileOpenClient.open('GET', 'demo/'+fileName+".txt");
+	var fileUrl = "https://raw.githubusercontent.com/MystikNinja/PuzzleScript/master/demo/" + fileName + ".txt";
+	fileOpenClient.open('GET', fileUrl);
 	fileOpenClient.onreadystatechange = function() {
 		
   		if(fileOpenClient.readyState!=4) {
