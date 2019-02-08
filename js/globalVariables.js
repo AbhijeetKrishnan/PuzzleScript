@@ -47,6 +47,10 @@ var norepeat_action=false;
 var oldflickscreendat=[];//used for buffering old flickscreen/scrollscreen positions, in case player vanishes
 var keybuffer = [];
 
+var disabledRules; // Set object used to store rule numbers to be disabled when disable_verbose_logging option is used
+var disable_stationary_logging = false;
+var playerMoved = false;
+
 var restarting=false;
 
 var messageselected=false;

@@ -1958,7 +1958,7 @@ Rule.prototype.applyAt = function(delta,tuple,check) {
         }
     }
 
-	if (verbose_logging && result && !disabledRules.has(rule.lineNumber)){
+	if (verbose_logging && result && !disabledRules.has(rule.lineNumber) && !(disable_stationary_logging && !playerMoved)){
 		var ruleDirection = dirMaskName[rule.direction];
 		if (!rule.directional()){
 			ruleDirection="";
@@ -2009,7 +2009,7 @@ Rule.prototype.queueCommands = function() {
 		level.commandQueue.push(command[0]);
 		level.commandQueueSourceRules.push(this);
 
-		if (verbose_logging){
+		if (verbose_logging && !(disable_stationary_logging && dir === -1)){
 			var lineNumber = this.lineNumber;
 			var ruleDirection = dirMaskName[this.direction];
 			var logString = '<font color="green">Rule <a onclick="jumpToLine(' + lineNumber.toString() + ');"  href="javascript:void(0);">' + lineNumber.toString() + '</a> triggers command '+command[0]+'.</font>';
@@ -2226,10 +2226,13 @@ function calculateRowColMasks() {
 /* returns a bool indicating if anything changed */
 function processInput(dir,dontDoWin,dontModify) {
 	againing = false;
+	playerMoved = !(dir === -1);
 
-	if (verbose_logging) { 
-	 	if (dir===-1) {
-	 		consolePrint('Turn starts with no input.')
+	if (verbose_logging) {
+	 	if (!playerMoved) {
+		    if (!disable_stationary_logging) {
+				 consolePrint('Turn starts with no input.');
+			}
 	 	} else {
 	 		consolePrint('=======================');
 			consolePrint('Turn starts with input of ' + ['up','left','down','right','action'][dir]+'.');
@@ -2293,7 +2296,7 @@ function processInput(dir,dontDoWin,dontModify) {
         	rigidloop=false;
         	i++;
         	
-        	if (verbose_logging){consolePrint('applying rules');}
+        	if (verbose_logging && !(disable_stationary_logging && !playerMoved)){consolePrint('applying rules');}
 
         	applyRules(state.rules, state.loopPoint, startRuleGroupIndex, level.bannedGroup);
         	var shouldUndo = resolveMovements();
@@ -2303,7 +2306,7 @@ function processInput(dir,dontDoWin,dontModify) {
         		restorePreservationState(startState);
         		startRuleGroupIndex=0;//rigidGroupUndoDat.ruleGroupIndex+1;
         	} else {
-        		if (verbose_logging){consolePrint('applying late rules');}
+        		if (verbose_logging && !(disable_stationary_logging && !playerMoved)){consolePrint('applying late rules');}
         		applyRules(state.lateRules, state.lateLoopPoint, 0);
         		startRuleGroupIndex=0;
         	}
@@ -2431,7 +2434,7 @@ function processInput(dir,dontDoWin,dontModify) {
 	    }
 
 	    if (textMode===false) {
-	    	if (verbose_logging) { 
+	    	if (verbose_logging && !(disable_stationary_logging && !playerMoved)) { 
 	    		consolePrint('Checking win condition.');
 			}
 			if (dontDoWin===undefined){

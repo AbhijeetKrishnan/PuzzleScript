@@ -102,6 +102,8 @@ function consoleCacheDump() {
 		summarised_message = summarised_message + " (x" + (times_repeated + 1) + ")";
 	}
 
+	if (summarised_message === "<br>") summarised_message = "";
+
 	addToConsole(summarised_message);
 }
 
