@@ -64,6 +64,7 @@ function consolePrint(text,urgent) {
 var cache_n = 0;
 
 function addToConsole(text) {
+	// console.log(text); // Edit this line to write to specific file
 	cache = document.createElement("div");
 	cache.id = "cache" + cache_n;
 	cache.innerHTML = text;
@@ -102,9 +103,9 @@ function consoleCacheDump() {
 		summarised_message = summarised_message + " (x" + (times_repeated + 1) + ")";
 	}
 
-	if (summarised_message === "<br>") summarised_message = "";
-
-	addToConsole(summarised_message);
+	if (summarised_message !== "<br>")
+		addToConsole(summarised_message);
+	
 }
 
 function consoleError(text) {	
