@@ -64,7 +64,7 @@ function consolePrint(text,urgent) {
 var cache_n = 0;
 
 function addToConsole(text) {
-	// console.log(text); // Edit this line to write to specific file
+	console.log(text); // Edit this line to write to specific file
 	cache = document.createElement("div");
 	cache.id = "cache" + cache_n;
 	cache.innerHTML = text;
@@ -121,3 +121,19 @@ function clearConsole() {
 
 var clearConsoleClick = document.getElementById("clearConsoleClick");
 clearConsoleClick.addEventListener("click", clearConsole, false);
+
+function copyConsole() {
+	// Reference: https://developers.google.com/web/updates/2018/03/clipboardapi
+	var code = document.getElementById('consoletextarea');
+	navigator.clipboard.writeText(code.innerHTML)
+  		.then(() => {
+    		console.log('Console copied to clipboard');
+  		})
+  		.catch(err => {
+    		// This can happen if the user denies clipboard permissions:
+    		console.error('Could not copy console: ', err);
+  		});
+}
+
+var copyConsoleClick = document.getElementById("copyConsoleClick");
+copyConsoleClick.addEventListener("click", copyConsole, false);
