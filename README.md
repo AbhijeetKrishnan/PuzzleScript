@@ -9,6 +9,11 @@ Try it out at https://www.puzzlescript.net
 
 Dev instructions here - https://groups.google.com/forum/#!searchin/puzzlescript/development/puzzlescript/yptIpY9hlng/cjfrOPy_4jcJ
 
+In the progs folder, add
+* YUICompressor 2.4.8 ([link](https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar)) (rename it to `yuicompressor-2.4.8.jar`)
+* Google Closure Compiler ([link](https://dl.google.com/closure-compiler/compiler-latest.zip)) (rename it to `closure.jar`)
+* HTML Compressor 1.5.3 ([link](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/htmlcompressor/htmlcompressor-1.5.3.jar))
+
 -----
 
 The MIT License (MIT)
