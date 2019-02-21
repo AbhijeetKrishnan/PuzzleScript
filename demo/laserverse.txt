@@ -13,6 +13,7 @@ norepeat_action
 
 verbose_logging
 disable_verbose_logging 735 769 770 771 772 773 774 775 776 777 779 910
+disable_stationary_logging
 
 ========
 OBJECTS
