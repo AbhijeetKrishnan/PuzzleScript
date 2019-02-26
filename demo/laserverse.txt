@@ -54,7 +54,6 @@ LightBlue Red Gray White
 2.3.2
 2.3.2
 
-
 LaserL
 LightBlue Red Gray White
 2221.
@@ -87,7 +86,6 @@ Blue Red Gray White
 20002
 2...2
 
-
 LaserOffL
 Blue Red Gray White
 2221.
@@ -104,7 +102,6 @@ Blue Red Gray White
 1100.
 .1222
 
-
 LaserOnU
 LightBlue Red Gray White Orange
 2.3.2
@@ -120,7 +117,6 @@ LightBlue Red Gray White Orange
 23332
 24342
 2.3.2
-
 
 LaserOnL
 LightBlue Red Gray White Orange
@@ -1013,6 +1009,8 @@ message Clear as Mud
 p...#...##
 ##########
 
+(
+
 message Only Half a Mirror
 
 ##g######
@@ -1093,6 +1091,8 @@ p...*..*..*.$.$!
 #.......l.....q#
 ################
 
+)
+
 message Tripwire
 
 #############
@@ -1102,6 +1102,8 @@ p._++k.._..$!
 #....t+++..##
 #############
 
+(
+
 message Tripwire2
 
 ###############
@@ -1110,6 +1112,8 @@ p._..k..$.s..$!
 #.+´.+..@....@#
 #._..t++@.*.f@#
 ###############
+
+)
 
 message Beamlock
 
@@ -1123,6 +1127,8 @@ p.k.g.s..¥$!
 #...t.....@#
 ####@@@@@@@#
 
+(
+
 message Beamlock2
 
 ########
@@ -1134,6 +1140,8 @@ p..s..$!
 #+...+##
 #++t++##
 ########
+
+)
 
 message Talos
 
@@ -1182,6 +1190,8 @@ p.....k..#..........##
 #*_+h.+..%...+.j_+++##
 #.....b..%...j......##
 ######################
+
+(
 
 message Parity
 
@@ -1260,6 +1270,10 @@ p.....##
 #.....##
 #.....##
 ########
+
+)
+
+(
 
 (---Ryan's first batch of levels---)
 
@@ -1500,6 +1514,8 @@ p.........$!
 #.........##
 ############
 
+)
+
 (--- Comprehension-testing levels for the final tests ---)
 (This idea was scrapped, btw. We can show people who prove really good at this game the following level.)
 
@@ -1524,6 +1540,8 @@ p...g...@.........#
 ###############!###
 
 (--- Boiled-down levels to teach particular mechanics ---)
+
+(
 
 message MiniParity
 
@@ -1653,6 +1671,8 @@ p.............._$!
 #...............##
 #...............##
 ##################
+
+)
 
 
 
