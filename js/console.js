@@ -64,10 +64,12 @@ function consolePrint(text,urgent) {
 var cache_n = 0;
 
 function addToConsole(text) {
-	console.log(text); // Edit this line to write to specific file
+	// console.log(text); // Edit this line to write to specific file
 	cache = document.createElement("div");
 	cache.id = "cache" + cache_n;
-	cache.innerHTML = text;
+	var time = new Date();
+	var timeString = "<br><font color=\"yellow\">" + time + "</font><br>";
+	cache.innerHTML = text + timeString;
 	cache_n++;
 	
 	var code = document.getElementById('consoletextarea');
