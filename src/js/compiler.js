@@ -107,6 +107,10 @@ function generateExtraMembers(state) {
             cache_console_messages = true;
         } else if (key === 'throttle_movement') {
             throttle_movement = true;
+        } else if ( key === 'disable_verbose_logging' ) {
+            disabledRules = new Set(val.split(" ").map(x => Number(x)));
+        } else if ( key === 'disable_stationary_logging' ) {
+            disable_stationary_logging = true;
         }
     }
 
